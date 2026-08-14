@@ -115,7 +115,7 @@
       const pages=[{id:"overview",label:"Overview"},{id:"lounges",label:"Lounges"},{id:"bookings",label:"Booking details"},{id:"stats",label:"Stats"}];
       pages.forEach((p,i)=>{const b=document.createElement("button");b.type="button";b.textContent=p.label;b.setAttribute("aria-pressed",i===0);b.onclick=()=>{pages.forEach(x=>$( `#${x.id}-panel`).hidden=x.id!==p.id);[...$(".tabs").children].forEach(x=>x.setAttribute("aria-pressed",x===b))};$(".tabs").append(b)});
       personButtons($("#overview-filters"),id=>{travelerFilter=id;renderOverview()});personButtons($("#lounge-filters"),renderLounges);
-      $("#sort").onchange=renderOverview;$("#compact").onclick=()=>{const active=$("#overview-panel").classList.toggle("compact");$("#compact").setAttribute("aria-pressed",active);$("#compact").textContent=active?"Full view":"Compact view"};
+      $("#sort").onchange=renderOverview;$("#compact").onclick=()=>{const active=$("#overview-panel").classList.toggle("compact");if(active){$("#sort").value="timeline";renderOverview()}$("#compact").setAttribute("aria-pressed",active);$("#compact").textContent=active?"Full view":"Compact view"};
       renderOverview();renderLounges();renderNotes();renderBookings();renderStats();
     }
     init();
