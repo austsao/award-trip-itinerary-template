@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c3b4b">
+  <title>Award Trip Itinerary</title>
+  <style>
+    :root{--ink:#14232b;--muted:#60717a;--paper:#f6f5f0;--card:#fff;--hotel:#fffaf0;--hotel-line:#eadfc9;--flight:#f3f5f4;--flight-line:#d5ddda;--line:#dbe2e1;--sea:#0c596d;--sea-dark:#073d4b;--gold:#aa6d13;--violet:#705aa4;--green:#28634c;--red:#a33c36;--shadow:0 12px 28px rgba(16,45,52,.08)}
+    *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.hero{padding:34px max(20px,calc((100% - 1120px)/2));color:#fff;background:linear-gradient(125deg,var(--sea-dark),var(--sea))}.eyebrow{margin:0 0 8px;color:#b9e4e8;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(2rem,7vw,3.8rem);line-height:1.05;letter-spacing:-.045em}.hero-subtitle{margin:12px 0 0;color:#d4eef0}main{width:min(1120px,100%);margin:auto;padding:22px 20px 56px}.tabs,.filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.tabs{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}button,select{font:inherit}button{flex:0 0 auto;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}button[aria-pressed=true]{border-color:var(--sea);background:var(--sea);color:#fff}.filters{padding:2px 0 16px}.tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.sort{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.84rem;font-weight:800}.sort select{padding:8px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:26px 0 12px}.section-head h2{margin:0;font-size:1.35rem;letter-spacing:-.02em}.caption{margin:0;color:var(--muted);font-size:.88rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{position:relative;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}.card.hotel{border-color:var(--hotel-line);background:var(--hotel)}.card.flight,.card.lounge{border-color:var(--flight-line);background:var(--flight)}.tag{display:inline-block;margin-bottom:7px;padding:2px 7px;border-radius:99px;background:#dfe9e6;color:#245348;font-size:.7rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}.hotel .tag{background:#f1e5ca;color:#765111}.route{margin:0;color:var(--sea);font-size:1.2rem;line-height:1.25}.place{margin:3px 0 0;color:var(--sea);font-weight:750}.date{margin:4px 0;color:var(--muted);font-size:.86rem}.description{margin:8px 0;color:var(--muted);font-size:.9rem;font-style:italic}.detail{margin:5px 0;font-size:.88rem}.price{color:var(--muted)}.cpp{margin-top:9px;font-size:.82rem;font-weight:850}.cpp.high{color:#24704d}.cpp.standard{color:#236a94}.cpp.low{color:var(--red)}.status{color:var(--green);font-size:.8rem;font-weight:800}.badge{position:absolute;top:13px;right:13px;max-width:50%;padding:4px 8px;border:1px solid var(--flight-line);border-radius:12px;background:rgba(255,255,255,.94);color:var(--sea-dark);font-size:.7rem;font-weight:850;text-align:right}.card:has(.badge) .route{max-width:48%}.notice{padding:14px;border:1px solid #edd0cd;border-radius:12px;background:#fff7f6}.notice strong{color:var(--red)}.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.metric strong{display:block;margin-top:3px;color:var(--sea-dark);font-size:1.28rem}.balance{margin:14px 0;padding:16px;border:1px solid #cbdcda;border-radius:18px;background:linear-gradient(135deg,#eef7f5,#fff);box-shadow:var(--shadow)}.balance>summary{display:flex;justify-content:space-between;gap:12px;padding:0;list-style:none;cursor:pointer}.balance>summary::-webkit-details-marker{display:none}.balance h3{margin:0;color:var(--sea-dark)}.balance summary p{margin:3px 0 0;color:var(--muted);font-size:.8rem}.toggle-label{align-self:flex-start;padding:4px 9px;border-radius:999px;background:#dcece8;color:var(--green);font-size:.7rem;font-weight:850}.balance-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.balance-group{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.84)}.balance-group h4{margin:0 0 6px;color:var(--muted);font-size:.72rem;text-transform:uppercase}.balance-row,.account-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:.86rem}.balance-row:first-of-type,.account-row:first-of-type{border-top:0}.balance-row strong,.account-row strong{text-align:right}.arrow{color:var(--sea)}.ledger{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}.ledger>summary{padding:14px 16px;font-weight:800;cursor:pointer}.ledger-list{padding:0 12px 12px}.entry{margin-top:8px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.entry>summary{padding:11px 12px;font-size:.9rem;font-weight:750;cursor:pointer}.entry-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:0 12px 13px}.field span{display:block;color:var(--muted);font-size:.7rem;font-weight:800;text-transform:uppercase}.field strong{font-size:.88rem;font-weight:550}.attention{color:var(--red)!important;font-weight:800!important}.account-card{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}.account-card h3{margin:0 0 8px;color:var(--sea)}.notes{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}.notes details{border-bottom:1px solid var(--line)}.notes details:last-child{border:0}.notes summary{padding:13px 15px;font-weight:750;cursor:pointer}.notes p{margin:0;padding:0 15px 14px;color:var(--muted)}footer{margin-top:36px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:.76rem;text-align:center}.compact .filters,.compact .sort,.compact #notes-section{display:none}.compact .description,.compact .detail,.compact .cpp,.compact .status{display:none}.compact .card{padding:12px 14px}
+    @media(max-width:620px){main{padding:18px 14px 40px}.hero{padding:28px 20px}.grid,.balance-body,.entry-fields{grid-template-columns:1fr}.section-head{display:block}.caption{margin-top:2px}.tools{align-items:flex-start;flex-direction:column-reverse}.card:has(.badge) .route{max-width:44%}}
+    @media print{body{background:#fff}.hero{padding:18px 24px}main{max-width:none;padding:14px 24px}.tabs,.filters,.tools{display:none}.card,.metric,.ledger{box-shadow:none;break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <header class="hero"><p class="eyebrow" id="trip-dates"></p><h1 id="trip-title"></h1><p class="hero-subtitle" id="trip-subtitle"></p></header>
+  <main>
+    <nav class="tabs" aria-label="Page sections"></nav>
+    <section id="overview-panel">
+      <div class="filters" id="overview-filters" aria-label="Filter itinerary by traveler"></div>
+      <div class="tools"><label class="sort">Sort by <select id="sort"><option value="separate">Trip order (separate)</option><option value="timeline">Chronological (combined)</option><option value="cpp">Highest CPP</option><option value="cash">Highest cash price</option></select></label><button id="compact" type="button" aria-pressed="false">Compact view</button></div>
+      <div id="overview-content"></div>
+      <section id="notes-section"><div class="section-head"><h2>Important notes</h2><p class="caption">Reminders and trip details</p></div><div class="notes" id="notes"></div></section>
+    </section>
+    <section id="lounges-panel" hidden><div class="filters" id="lounge-filters"></div><p class="caption" id="lounge-baseline"></p><div class="section-head"><h2>Lounges</h2><p class="caption">Best pre-flight option at each airport</p></div><div class="grid" id="lounges"></div></section>
+    <section id="bookings-panel" hidden><div class="section-head"><h2>Booking details</h2><p class="caption">Accounts, payments, and shared expenses</p></div><div id="attention"></div><div id="balance"></div><details class="ledger" open><summary>Family booking records</summary><div class="ledger-list" id="ledger"></div></details></section>
+    <section id="stats-panel" hidden><div class="section-head"><h2>Trip stats</h2><p class="caption">Value, costs, points, and credits</p></div><div class="summary-grid" id="metrics"></div><div class="section-head"><h2>By account</h2><p class="caption">Committed rewards and applied credits</p></div><div class="grid" id="accounts"></div><div id="footnotes"></div></section>
+    <footer id="updated"></footer>
+  </main>
+  <script>
+    /* ================================================================
+       EDIT ONLY THIS TRIP_DATA BLOCK TO MAKE THE TEMPLATE YOUR OWN.
+       Dates use YYYY-MM-DD so chronological sorting works automatically.
+       People values must match an id in travelers.
+       ================================================================ */
+    const TRIP_DATA = {
+      title: "Master Award Trip Itinerary",
+      dates: "Month 1 – Month 30, 2027",
+      subtitle: "A points-powered family journey with one very rewarding detour.",
+      updated: "Last updated Month DD, 2027",
+      travelers: [
+        { id: "you", label: "You" },
+        { id: "parents", label: "Parents" },
+        { id: "friends", label: "Friends" }
+      ],
+      priorityPassBaseline: "Everyone carries Priority Pass.",
+      bookings: [
+        { id:"hotel-1", type:"hotel", date:"2027-04-01", displayDate:"Apr 1 · 3 nights", people:["you","parents"], title:"Grand Hotel Example", place:"Tokyo", description:"A convenient first base for settling into the trip.", details:"You + parents · 1 suite", award:"60k hotel points", cash:"$1,200", cashValue:1200, cpp:"2.0¢", cppValue:2.0, status:"Confirmed", account:"Your hotel account", fees:"None", coveredBy:"You · 60k points", shared:"Split equally between you and parents." },
+        { id:"flight-1", type:"flight", date:"2027-04-01", displayDate:"Apr 1", people:["you","parents"], title:"LAX – NRT", place:"Example Air Business", description:"A comfortable long-haul start with lie-flat seats and a proper meal service.", seats:"2A · 2D · 2G", award:"210k airline miles", cash:"$8,700", cashValue:8700, cpp:"4.1¢", cppValue:4.1, status:"Confirmed", account:"Your airline account", fees:"$120 total", coveredBy:"You · 210k miles + $120", shared:"Each traveler covers their ticket." },
+        { id:"hotel-2", type:"hotel", date:"2027-04-04", displayDate:"Apr 4 · 2 nights", people:["you","parents","friends"], title:"Ryokan Example", place:"Hakone", description:"The slowest and most indulgent part of the trip.", details:"Everyone · 2 rooms", award:"Two card credits + cash", cash:"$900 ($600 net)", cashValue:900, cpp:"N/A", cppValue:0, status:"Action required: confirm dinner time", account:"Cardholder accounts", fees:"$600 net", coveredBy:"You · $300; Friends · $300", shared:"Allocate by room." },
+        { id:"flight-2", type:"flight", date:"2027-04-06", displayDate:"Apr 6", people:["friends"], title:"HND – ICN", place:"Example Air Economy", description:"A quick regional hop with just enough time for a snack and a movie.", seats:"TBD", award:"30k airline miles", cash:"$550", cashValue:550, cpp:"1.7¢", cppValue:1.7, status:"Confirmed", account:"Friends' airline account", fees:"$40", coveredBy:"Friends", shared:"No balancing needed." }
+      ],
+      lounges: [
+        { date:"2027-04-01", displayDate:"Apr 1", route:"LAX – NRT", people:["you","parents"], travelers:"You + Parents", stops:[{airport:"LAX",name:"Example Airline Lounge",location:"International Terminal, Level 6"}] },
+        { date:"2027-04-06", displayDate:"Apr 6", route:"HND – ICN", people:["friends"], travelers:"Friends", stops:[{airport:"HND",name:"Example Sakura Lounge",location:"Terminal 3, after security"}] }
+      ],
+      notes: [
+        { title:"Find better award seats", text:"Keep checking for business-class availability for the short regional flights.", attention:true },
+        { title:"Points deadline", text:"Move the remaining hotel points before the reservation deadline.", attention:true },
+        { title:"Exchange-rate note", text:"Record the date used for any foreign-currency conversions.", attention:false }
+      ],
+      balances: {
+        cash:[{from:"Parents",to:"You",amount:"$300.00"},{from:"Friends",to:"You",amount:"$150.00"}],
+        awards:[{from:"Parents",to:"You",amount:"70k airline miles"},{from:"You",to:"Parents",amount:"1 hotel certificate"}],
+        note:"Treat these as a friendly reconciliation snapshot. Keep different reward programs separate."
+      },
+      metrics:[
+        {label:"Known trip value",value:"$12.4k"},{label:"Estimated cash saved",value:"$10.8k"},{label:"Known cash outlay",value:"$1,040"},{label:"Points + miles",value:"300k"},{label:"Weighted CPP",value:"3.6¢"}
+      ],
+      accounts:[
+        {name:"You",rows:[["Itinerary value","$9,900"],["Points + miles","270k"],["Certificates","1"],["Card credits","$300"]],note:"Include pending reservations only when you intend to keep them."},
+        {name:"Parents",rows:[["Itinerary value","$1,950"],["Points + miles","None"],["Certificates","1"],["Card credits","$150"]]},
+        {name:"Friends",rows:[["Itinerary value","$550"],["Points + miles","30k"],["Certificates","None"],["Card credits","$150"]]}
+      ],
+      footnotes:["Cash values are comparison prices, not necessarily amounts paid.","Weighted CPP should subtract award taxes and fees from comparable cash value."]
+    };
+
+    const $=s=>document.querySelector(s), moneyNumber=s=>Number(String(s).replace(/[^0-9.]/g,""))||0;
+    const prettyDate=iso=>new Date(`${iso}T12:00:00`).getTime();
+    let travelerFilter="all";
+    const personButtons=(target,onClick)=>{
+      target.innerHTML="";
+      [{id:"all",label:"Everyone"},...TRIP_DATA.travelers].forEach((p,i)=>{const b=document.createElement("button");b.type="button";b.textContent=p.label;b.dataset.person=p.id;b.setAttribute("aria-pressed",i===0);b.onclick=()=>{[...target.children].forEach(x=>x.setAttribute("aria-pressed",x===b));onClick(p.id)};target.append(b)});
+    };
+    const card=b=>`<article class="card ${b.type}" data-people="${b.people.join(" ")}"><span class="tag">${b.type}</span>${b.seats?`<span class="badge">Seats: ${b.seats}</span>`:""}<h3 class="route">${b.title}</h3><p class="place">${b.place}</p><p class="date">${b.displayDate}</p><p class="description">${b.description||""}</p>${b.details?`<p class="detail">${b.details}</p>`:""}<p class="detail"><strong>Award:</strong> ${b.award}</p><p class="detail price"><strong>Cash:</strong> ${b.cash}</p><p class="cpp ${b.cppValue>=2.5?"high":b.cppValue>=1.5?"standard":"low"}">CPP: ${b.cpp}</p><p class="status">${b.status}</p></article>`;
+    function renderOverview(){
+      let list=TRIP_DATA.bookings.filter(b=>travelerFilter==="all"||b.people.includes(travelerFilter));
+      const mode=$("#sort").value,root=$("#overview-content");
+      if(mode==="separate"){
+        const hotels=list.filter(b=>b.type==="hotel").sort((a,b)=>prettyDate(a.date)-prettyDate(b.date));
+        const flights=list.filter(b=>b.type==="flight").sort((a,b)=>prettyDate(a.date)-prettyDate(b.date));
+        root.innerHTML=`<div class="section-head"><h2>Hotels</h2><p class="caption">In trip order</p></div><div class="grid">${hotels.map(card).join("")||"<p>No matching hotels.</p>"}</div><div class="section-head"><h2>Flights</h2><p class="caption">In trip order</p></div><div class="grid">${flights.map(card).join("")||"<p>No matching flights.</p>"}</div>`;
+      }else{
+        list.sort(mode==="timeline"?(a,b)=>prettyDate(a.date)-prettyDate(b.date):mode==="cpp"?(a,b)=>b.cppValue-a.cppValue:(a,b)=>b.cashValue-a.cashValue);
+        const label=mode==="timeline"?"Every booking in chronological order":mode==="cpp"?"Highest redemption value first":"Highest comparable cash price first";
+        root.innerHTML=`<div class="section-head"><h2>All bookings</h2><p class="caption">${label}</p></div><div class="grid">${list.map(card).join("")}</div>`;
+      }
+    }
+    function renderLounges(filter="all"){$("#lounges").innerHTML=TRIP_DATA.lounges.filter(l=>filter==="all"||l.people.includes(filter)).sort((a,b)=>prettyDate(a.date)-prettyDate(b.date)).map(l=>`<article class="card lounge"><span class="tag">Lounge</span><span class="badge">${l.travelers}</span><h3 class="route">${l.route}</h3><p class="date">${l.displayDate}</p>${l.stops.map(s=>`<p class="detail"><strong>${s.name}</strong><br>${s.airport} · ${s.location}</p>`).join("")}</article>`).join("")}
+    function renderNotes(){$("#notes").innerHTML=TRIP_DATA.notes.map(n=>`<details ${n.attention?"open":""}><summary class="${n.attention?"attention":""}">${n.title}</summary><p>${n.text}</p></details>`).join("")}
+    function renderBookings(){
+      const count=TRIP_DATA.bookings.filter(b=>b.status.startsWith("Action required")).length;
+      $("#attention").innerHTML=`<div class="summary-grid"><div class="metric"><span>Needs attention</span><strong class="attention">${count}</strong></div></div>`;
+      const rows=x=>x.map(r=>`<div class="balance-row"><span>${r.from} <span class="arrow">→</span> ${r.to}</span><strong>${r.amount}</strong></div>`).join("");
+      $("#balance").innerHTML=`<details class="balance" open><summary><div><h3>Family balance snapshot</h3><p>Known amounts to even out</p></div><span class="toggle-label">Show / hide</span></summary><div class="balance-body"><section class="balance-group"><h4>Net cash</h4>${rows(TRIP_DATA.balances.cash)}</section><section class="balance-group"><h4>Points + certificates</h4>${rows(TRIP_DATA.balances.awards)}</section></div><p class="caption">${TRIP_DATA.balances.note}</p></details>`;
+      $("#ledger").innerHTML=[...TRIP_DATA.bookings].sort((a,b)=>prettyDate(a.date)-prettyDate(b.date)).map(b=>`<details class="entry" open><summary>${b.type[0].toUpperCase()+b.type.slice(1)} · ${b.title} · ${b.displayDate}</summary><div class="entry-fields">${[["Account owner",b.account],["Booking status",b.status],["Cash paid / fees",b.fees],["Covered by",b.coveredBy],["Shared cost note",b.shared]].map(([l,v])=>`<div class="field"><span>${l}</span><strong class="${l==="Booking status"&&v.startsWith("Action required")?"attention":""}">${v||"Not recorded"}</strong></div>`).join("")}</div></details>`).join("");
+    }
+    function renderStats(){
+      $("#metrics").innerHTML=TRIP_DATA.metrics.map(m=>`<div class="metric"><span>${m.label}</span><strong>${m.value}</strong></div>`).join("");
+      $("#accounts").innerHTML=TRIP_DATA.accounts.map(a=>`<article class="account-card"><h3>${a.name}</h3>${a.rows.map(r=>`<div class="account-row"><span>${r[0]}</span><strong>${r[1]}</strong></div>`).join("")}${a.note?`<p class="caption">${a.note}</p>`:""}</article>`).join("");
+      $("#footnotes").innerHTML=`<div class="section-head"><h2>Method notes</h2></div>${TRIP_DATA.footnotes.map((n,i)=>`<p class="caption"><sup>${i+1}</sup> ${n}</p>`).join("")}`;
+    }
+    function init(){
+      document.title=`${TRIP_DATA.title} | ${TRIP_DATA.dates}`;$("#trip-title").textContent=TRIP_DATA.title;$("#trip-dates").textContent=TRIP_DATA.dates;$("#trip-subtitle").textContent=TRIP_DATA.subtitle;$("#updated").textContent=TRIP_DATA.updated;$("#lounge-baseline").textContent=TRIP_DATA.priorityPassBaseline;
+      const pages=[{id:"overview",label:"Overview"},{id:"lounges",label:"Lounges"},{id:"bookings",label:"Booking details"},{id:"stats",label:"Stats"}];
+      pages.forEach((p,i)=>{const b=document.createElement("button");b.type="button";b.textContent=p.label;b.setAttribute("aria-pressed",i===0);b.onclick=()=>{pages.forEach(x=>$( `#${x.id}-panel`).hidden=x.id!==p.id);[...$(".tabs").children].forEach(x=>x.setAttribute("aria-pressed",x===b))};$(".tabs").append(b)});
+      personButtons($("#overview-filters"),id=>{travelerFilter=id;renderOverview()});personButtons($("#lounge-filters"),renderLounges);
+      $("#sort").onchange=renderOverview;$("#compact").onclick=()=>{const active=$("#overview-panel").classList.toggle("compact");$("#compact").setAttribute("aria-pressed",active);$("#compact").textContent=active?"Full view":"Compact view"};
+      renderOverview();renderLounges();renderNotes();renderBookings();renderStats();
+    }
+    init();
+  </script>
+</body>
+</html>
